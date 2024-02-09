@@ -15,6 +15,3 @@ tags: ["astro", "blogging", "learning in public"]
 ## Curb your enthousiasm
 
 ## Todo's
-
-    "markdown-it": "^14.0.0",
-    "sanitize-html": "^2.11.0",

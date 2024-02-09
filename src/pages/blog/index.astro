@@ -1,12 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
-import globals from "../../model/globals";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const posts = await getCollection("posts");
 ---
 
-<MarkdownLayout>
+<BaseLayout>
   <ul>
     {
       posts.map((post) => (
@@ -16,4 +15,4 @@ const posts = await getCollection("posts");
       ))
     }
   </ul>
-</MarkdownLayout>
+</BaseLayout>
