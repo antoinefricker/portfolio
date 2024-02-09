@@ -1,0 +1,10 @@
+---
+import TablerIcon from "./TablerIcon.astro";
+
+const { icon, label, url } = Astro.props;
+---
+
+<div class="stack --gap-m">
+  <TablerIcon name={icon} />
+  <a href={url}>{label}</a>
+</div>

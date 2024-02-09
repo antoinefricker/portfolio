@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+const { post } = Astro.props;
+const html = await post.render();
+console.log({ post, html });
+---
+
+<BaseLayout pageTitle={post.data?.title || "caca"}>
+  <h1>{slug}</h1>
+  <pre>{JSON.stringify(post, null, 4)}</pre>
+  <html.Content />
+</BaseLayout>

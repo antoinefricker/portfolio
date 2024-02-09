@@ -1,0 +1,33 @@
+@each $name, $size in $gutter-multipliers {
+  .m-#{$name} {
+    margin: $size * $gutter;
+  }
+  .mt-#{$name} {
+    margin-top: $size * $gutter;
+  }
+  .mr-#{$name} {
+    margin-right: $size * $gutter;
+  }
+  .mb-#{$name} {
+    margin-bottom: $size * $gutter;
+  }
+  .ml-#{$name} {
+    margin-left: $size * $gutter;
+  }
+
+  .p-#{$name} {
+    padding: $size * $gutter;
+  }
+  .pt-#{$name} {
+    padding-top: $size * $gutter;
+  }
+  .pr-#{$name} {
+    padding-right: $size * $gutter;
+  }
+  .pb-#{$name} {
+    padding-bottom: $size * $gutter;
+  }
+  .pl-#{$name} {
+    padding-left: $size * $gutter;
+  }
+}
