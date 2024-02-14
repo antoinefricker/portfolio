@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Northern lights";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <style>
+    .container {
+      //border: white 1px solid;
+    }
+  </style>
+
+  <h1>{pageTitle}</h1>
+  <section id="colorset">
+    <div class="stack --row --gap-lg">
+      <div class="stack --row">
+        <div class="container p-lg --bg-card"></div>
+        <div class="container p-lg --bg-card"></div>
+        <div class="container p-lg --bg-card"></div>
+      </div>
+
+      <div class="stack --row">
+        <div class="container p-lg --bg-primary"></div>
+        <div class="container p-lg --bg-primary"></div>
+        <div class="container p-lg --bg-primary"></div>
+      </div>
+
+      <div class="stack --row">
+        <div class="container p-lg --bg-secondary"></div>
+        <div class="container p-lg --bg-secondary"></div>
+        <div class="container p-lg --bg-secondary"></div>
+      </div>
+
+      <div class="stack --row">
+        <div class="container p-lg --bg-success"></div>
+        <div class="container p-lg --bg-success"></div>
+        <div class="container p-lg --bg-success"></div>
+      </div>
+
+      <div class="stack --row">
+        <div class="container p-lg --bg-info"></div>
+        <div class="container p-lg --bg-info"></div>
+        <div class="container p-lg --bg-info"></div>
+      </div>
+
+      <div class="stack --row">
+        <div class="container p-lg --bg-warning"></div>
+        <div class="container p-lg --bg-warning"></div>
+        <div class="container p-lg --bg-warning"></div>
+      </div>
+
+      <div class="stack --row">
+        <div class="container p-lg --bg-danger"></div>
+        <div class="container p-lg --bg-danger"></div>
+        <div class="container p-lg --bg-danger"></div>
+      </div>
+    </div>
+  </section>
+  <section class="text-flow">
+    <h1>Maecenas in arcu laoreet laoreet justo sit amet</h1>
+    <h2>Suspendisse malesuada sem ut nibh cursus vulputate diam ultricies</h2>
+    <hr />
+    <h1>Maecenas in arcu laoreet laoreet justo sit amet</h1>
+    <p>
+      Class aptent taciti sociosque ad litora torquent per conubia nostra, per
+      inceptos himenaeos. Etiam at quam felis. Duis sed elit a ligula malesuada
+      imperdiet at eu tellus. Sed vehicula iaculis magna, non posuere orci
+      suscipit id. Maecenas consequat et sem sit amet sollicitudin. Mauris sit
+      amet dignissim mauris.
+    </p>
+    <h2>
+      Suspendisse malesuada sem ut nibh cursus, a vulputate diam ultricies
+    </h2>
+    <p>
+      Class aptent taciti sociosque ad litora torquent per conubia nostra, per
+      inceptos himenaeos. Etiam at quam felis. Duis sed elit a ligula malesuada
+      imperdiet at eu tellus. Sed vehicula iaculis magna, non posuere orci
+      suscipit id. Maecenas consequat et sem sit amet sollicitudin. Mauris sit
+      amet dignissim mauris.
+    </p>
+    <code>
+      <pre>
+            {`
+            constructor (options) {
+    if (typeof options === 'number')
+      options = { max: options }
+
+    if (!options)
+      options = {}
+
+    if (options.max && (typeof options.max !== 'number' || options.max < 0))
+      throw new TypeError('max must be a non-negative number')
+    // Kind of weird to have a default max of Infinity, but oh well.
+    const max = this[MAX] = options.max || Infinity
+
+    const lc = options.length || naiveLength
+    this[LENGTH_CALCULATOR] = (typeof lc !== 'function') ? naiveLength : lc
+    this[ALLOW_STALE] = options.stale || false
+    if (options.maxAge && typeof options.maxAge !== 'number')
+      throw new TypeError('maxAge must be a number')
+    this[MAX_AGE] = options.maxAge || 0
+    this[DISPOSE] = options.dispose
+    this[NO_DISPOSE_ON_SET] = options.noDisposeOnSet || false
+    this[UPDATE_AGE_ON_GET] = options.updateAgeOnGet || false
+    this.reset()
+  }
+            `}
+        </pre>
+    </code>
+  </section>
+</BaseLayout>

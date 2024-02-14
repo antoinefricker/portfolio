@@ -2,15 +2,43 @@
 import SocialLink from "../ui/SocialLink.astro";
 ---
 
-<footer>
-  <div class="stack --row --m1">
-    <div>
-      <h5>antoine fricker</h5>
-      <p></p>
-      <div class="stack --column --start --gap-m">
-        <SocialLink icon="brand-github" label="follow me on github" url="" />
-        <SocialLink icon="mail" label="get in touch" url="#" />
-      </div>
-    </div>
+<footer
+  class="root-container stack --column --gap-md mt-xl"
+  style="align-items: flex-start;"
+>
+  <div class="stack --align-items-end --gap-md">
+    <h4>antoine fricker</h4>
+    <SocialLink
+      icon="device-mobile"
+      label="+33 6 13 17 42 50"
+      printLabel={true}
+      url="tel:33613174250"
+    />
+    <SocialLink
+      icon="mail"
+      label="antoine.fricker@gmail.com"
+      printLabel={true}
+      url="mailto:antoine.fricker@gmail.com"
+    />
+    <SocialLink
+      icon="map-pin"
+      label="Address"
+      printLabel={false}
+      url="https://www.google.com/maps/place/16+All.+Jean+Pierre+Carl,+67120+Molsheim/@48.5386039,7.4882773,17z/data=!3m1!4b1!4m6!3m5!1s0x4796adf3abc6921d:0x5bc7ef60e80aec91!8m2!3d48.5386004!4d7.4908522!16s%2Fg%2F11c4kw3hw2?entry=ttu"
+    />
+    <SocialLink icon="rss" label="RSS" printLabel={false} url="/rss.xml" />
+  </div>
+  <div class="stack --align-items-end --gap-md">
+    <h4>networks</h4>
+    <SocialLink
+      icon="brand-github"
+      label="follow me on GitHub"
+      url="https://github.com/antoinefricker"
+    />
+    <SocialLink
+      icon="brand-linkedin"
+      label="connect on LinkedIn"
+      url="https://www.linkedin.com/in/antoine-fricker-2a566754/"
+    />
   </div>
 </footer>

@@ -1,0 +1,201 @@
+// --- font faces
+%text-title {
+  font-family: $font-family-title;
+  font-weight: 200;
+  font-style: normal;
+}
+
+%text-code {
+  font-family: $font-family-code;
+  font-size: 0.7rem;
+  font-weight: 100;
+  font-style: normal;
+}
+
+%text-body-standard {
+  font-family: $font-family-body;
+  font-weight: 100;
+  font-style: normal;
+}
+%text-body-bold {
+  font-family: $font-family-body;
+  font-weight: 300;
+  font-style: normal;
+}
+%text-italic {
+  font-style: italic !important;
+}
+
+// --- font sizes
+%text-xsm {
+  font-size: 0.75em;
+}
+%text-sm {
+  font-size: 0.85em;
+}
+%text-default {
+  font-size: 1rem;
+}
+
+// --- headings
+%h1 {
+  @extend %text-title;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+%h2 {
+  @extend %text-title;
+  font-size: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+%h3 {
+  @extend %text-title;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+%h4 {
+  @extend %text-title;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+}
+%h5 {
+  @extend %text-body-bold;
+  font-size: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+%h6 {
+  @extend %text-body-bold;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+// blocks
+
+%paragraph {
+  @extend %text-body-standard;
+  margin: 0;
+  padding: 0;
+}
+
+// links
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  &:visited,
+  &:active,
+  &:focus,
+  &:hover {
+    color: currentColor;
+  }
+}
+
+%text-link-styled {
+  text-decoration: none;
+  color: currentColor;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    transition: height 0.3s ease-in-out, 0.3s ease-in-out;
+    z-index: -1;
+
+    background-color: rgba(theme("colors.primary"), 0.1);
+  }
+  &:hover:after {
+    height: 16px;
+    background-color: rgba(theme("colors.primary"), 0.5);
+  }
+}
+
+// --- initialization
+
+@mixin typographyFlow {
+  .flow-text {
+    & > *:first-child {
+      margin-top: 0 !important;
+    }
+    & > *:last-child {
+      margin-bottom: 0 !important;
+    }
+    h1 {
+      margin: 0.75em 0 1em 0;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0.5em 0 0.5em 0;
+    }
+    p {
+      margin: 0 0 0.75em 0;
+    }
+    a {
+      @extend %text-link-styled;
+    }
+  }
+}
+
+@mixin typographyOverrideTags {
+  html {
+    @extend %text-body-standard;
+    font-size: $font-size-base;
+    color: theme("colors.text");
+  }
+
+  * {
+    font-family: inherit;
+    line-height: 1.1;
+  }
+
+  code,
+  pre {
+    @extend %text-code;
+  }
+  pre:has(code) {
+    display: block;
+    padding: theme("gutters.lg") theme("gutters.md");
+    border-radius: 4px;
+    margin: 1rem 0 1.5rem 0;
+    & > code {
+      display: block;
+    }
+  }
+
+  h1 {
+    @extend %h1;
+  }
+  h2 {
+    @extend %h2;
+  }
+  h3 {
+    @extend %h3;
+  }
+  h4 {
+    @extend %h4;
+  }
+  h5 {
+    @extend %h5;
+  }
+  h6 {
+    @extend %h6;
+  }
+  p {
+    @extend %text-default;
+    @extend %paragraph;
+  }
+}
+
+@include typographyOverrideTags();
+@include typographyFlow();

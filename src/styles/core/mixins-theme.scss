@@ -1,0 +1,15 @@
+@use "sass:string";
+@use "sass:list";
+
+@function theme($key) {
+  $tokens: string.split($key, ".", 1);
+  $mainToken: list.nth($tokens, 1);
+  @if $mainToken == "colors" {
+    @return map-get($theme-colors, list.nth($tokens, 2));
+  }
+  @if $mainToken == "gutters" {
+    @return map-get($theme-gutters, list.nth($tokens, 2)) * $gutter;
+  }
+  @debug $mainToken;
+  @warn "Unknown theme key: #{$key}";
+}

@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Restricted area";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    My name is antoine fricker, I'm a fullstack developer, mainly in node.js
+    &amp; React within the Javascript/Typescript ecosystem in general.
+  </p>
+  <form>
+    <label for="login">Login</label>
+    <input type="text" id="login" name="login" />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" />
+    <button type="submit">Submit</button>
+  </form>
+</BaseLayout>

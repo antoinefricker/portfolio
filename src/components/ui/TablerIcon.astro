@@ -1,9 +1,26 @@
 ---
 import { Icon } from "astro-icon/components";
+import { clsx } from "clsx";
 
-const { name } = Astro.props;
+const sizes = {
+  sm: 16,
+  md: 24,
+  lg: 32,
+  xl: 48,
+};
+interface Props {
+  className?: string;
+  name: string;
+  size?: keyof typeof sizes;
+}
+
+const { className, name, size } = Astro.props;
+
+const appliedSize = sizes[size ?? "md"];
 
 // @see https://icon-sets.iconify.design/tabler/
 ---
 
-<Icon width={24} height={24} name={`tabler:${name}`} />
+<span class={clsx(className, "tabler-icon")}>
+  <Icon width={appliedSize} height={appliedSize} name={`tabler:${name}`} />
+</span>

@@ -1,2 +1,32 @@
 $gutter: 12px !default;
-$gutter-multipliers: xl 4, l 2, m 1, s 0.5, xs 0.25 !default;
+$theme-gutters: (
+  xl: 4,
+  lg: 2,
+  md: 1,
+  sm: 0.5,
+  xs: 0.25,
+) !default;
+
+$theme-colors: (
+  primary: #0bd2d3,
+  secondary: #eb96dd,
+  success: #4ae566,
+  info: #0bd2d3,
+  warning: #f1df34,
+  danger: #e96464,
+  page: #141616,
+  card: #414b4d,
+  text: #cbd6d8,
+) !default;
+
+$color-dark-variation: 12%;
+$color-light-variation: 10%;
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+$font-size-base: 24px;
+$font-family-body: "Barlow Condensed", sans-serif; // <weight>: 300 | 400
+$font-family-title: "Playfair Display", serif; // <weight>: 400 | 500 | 600 | 700 | 800 | 900
+$font-family-code: "JetBrains Mono", monospace; // <weight>: Use a value from 200 to 900

@@ -1,0 +1,57 @@
+.stack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & > *:not(.stack-filler) {
+    flex: 0 0 auto;
+  }
+  & > .stack-filler {
+    flex: 1 1 100%;
+  }
+
+  &.--debug > * {
+    outline: 1px solid red;
+  }
+
+  &.--column {
+    flex-direction: column;
+  }
+
+  &.--align-items-start {
+    align-items: flex-start;
+  }
+  &.--align-items-center {
+    align-items: center;
+  }
+  &.--align-items-end {
+    align-items: flex-end;
+  }
+
+  @each $name, $size in $theme-gutters {
+    &:not(.--column).--gap-#{$name} {
+      & > * {
+        margin-left: (0.5 * $size) * $gutter;
+        margin-right: (0.5 * $size) * $gutter;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    &.--column.--gap-#{$name} {
+      & > * {
+        margin-top: (0.5 * $size) * $gutter;
+        margin-bottom: (0.5 * $size) * $gutter;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

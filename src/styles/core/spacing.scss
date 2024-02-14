@@ -1,6 +1,14 @@
-@each $name, $size in $gutter-multipliers {
+@each $name, $size in $theme-gutters {
   .m-#{$name} {
     margin: $size * $gutter;
+  }
+  .mx-#{$name} {
+    margin-left: $size * $gutter;
+    margin-right: $size * $gutter;
+  }
+  .my-#{$name} {
+    margin-top: $size * $gutter;
+    margin-bottom: $size * $gutter;
   }
   .mt-#{$name} {
     margin-top: $size * $gutter;
@@ -17,6 +25,14 @@
 
   .p-#{$name} {
     padding: $size * $gutter;
+  }
+  .px-#{$name} {
+    padding-left: $size * $gutter;
+    padding-right: $size * $gutter;
+  }
+  .py-#{$name} {
+    padding-top: $size * $gutter;
+    padding-bottom: $size * $gutter;
   }
   .pt-#{$name} {
     padding-top: $size * $gutter;

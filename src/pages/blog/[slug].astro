@@ -10,13 +10,15 @@ export async function getStaticPaths() {
   }));
 }
 
-const { slug } = Astro.params;
 const { post } = Astro.props;
 const html = await post.render();
+
+// <pre>{JSON.stringify(post, null, 4)}</pre>
 ---
 
-<BaseLayout pageTitle={post.data?.title || "caca"}>
-  <h1>{slug}</h1>
-  <pre>{JSON.stringify(post, null, 4)}</pre>
-  <html.Content />
+<BaseLayout pageTitle={post.data.title}>
+  <article class="flow-text">
+    <h1>{post.data?.title}</h1>
+    <html.Content />
+  </article>
 </BaseLayout>

@@ -1,14 +1,15 @@
 ---
-const { pageTitle } = Astro.props;
+import TablerIcon from "../ui/TablerIcon.astro";
 ---
 
-<header>
-  <h3>{pageTitle}</h3>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-    <a href="/tags">Tags</a>
-    <a href="/rss.xml">RSS</a>
+<header class="root-container py-md mb-xl">
+  <nav class="stack --row --align-items-end --gap-lg">
+    <a href="/">
+      <TablerIcon name="circle-dot" className="txt-primary" />
+    </a>
+    <a href="/blog">/blog</a>
+    <a href="/about">/about</a>
+    <div class="stack-filler"></div>
+    <a href="/private"><TablerIcon name="lock" /></a>
   </nav>
 </header>

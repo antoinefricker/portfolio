@@ -1,5 +1,5 @@
 ---
-import "../styles/global.scss";
+import "../styles/style.scss";
 
 import AppHeader from "../components/page/PageHeader.astro";
 import AppFooter from "../components/page/PageFooter.astro";
@@ -17,7 +17,9 @@ const { pageTitle } = Astro.props;
 
   <body>
     <AppHeader pageTitle={pageTitle} />
-    <slot />
+    <main class="root-container">
+      <slot />
+    </main>
     <AppFooter />
   </body>
 </html>
