@@ -1,0 +1,10 @@
+---
+import TablerIcon from "./TablerIcon.astro";
+
+const { label, icon, url } = Astro.props;
+---
+
+<a href={url} class="navigation-button">
+  <TablerIcon name={icon ?? "arrow-bar-right"} />
+  <span>{label}</span>
+</a>

@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BlogDateBlock from "./BlogDateBlock.astro";
+import NavigationButton from "../ui/NavigationButton.astro";
+
+const { length = 5, previewLength = 1, showMoreLink = true } = Astro.props;
+
+const allPosts = await getCollection("posts");
+const posts = allPosts.slice(-length);
+---
+
+<div>
+  {
+    posts.map((post, index) => {
+      const pubDate = post.data.pubDate;
+      return (
+        <div>
+          <div class="stack --row --gap-lg --align-items-start mb-md">
+            <a href={`blog/${post.slug}`}>
+              <BlogDateBlock date={pubDate} />
+            </a>
+            <div class="stack --column --align-items-start mb-md">
+              <a href={`blog/${post.slug}`}>
+                <h3>{post.data.title}</h3>
+              </a>
+              {index < previewLength && <p>{post.data.description}</p>}
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>
+<br />
+{showMoreLink && <NavigationButton url="/blog" label="More posts" />}

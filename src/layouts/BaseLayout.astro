@@ -8,18 +8,21 @@ const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-  <style lang="scss"></style>
-  <meta charset="utf-8" />
-  <title>{pageTitle}</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
-
+  <head>
+    <style lang="scss"></style>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
   <body>
     <AppHeader pageTitle={pageTitle} />
-    <main class="root-container">
-      <slot />
+    <main id="app-container">
+      <div class="root-container">
+        <slot />
+        <AppFooter />
+      </div>
     </main>
-    <AppFooter />
   </body>
 </html>

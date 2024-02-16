@@ -2,12 +2,10 @@
 import SocialLink from "../ui/SocialLink.astro";
 ---
 
-<footer
-  class="root-container stack --column --gap-md mt-xl"
-  style="align-items: flex-start;"
->
+<section id="app-footer" class="app-section">
+  <div class="stack --column --gap-md align-items-start"></div>
   <div class="stack --align-items-end --gap-md">
-    <h4>antoine fricker</h4>
+    <h6>antoine fricker</h6>
     <SocialLink
       icon="device-mobile"
       label="+33 6 13 17 42 50"
@@ -29,7 +27,7 @@ import SocialLink from "../ui/SocialLink.astro";
     <SocialLink icon="rss" label="RSS" printLabel={false} url="/rss.xml" />
   </div>
   <div class="stack --align-items-end --gap-md">
-    <h4>networks</h4>
+    <h6>networks</h6>
     <SocialLink
       icon="brand-github"
       label="follow me on GitHub"
@@ -41,4 +39,4 @@ import SocialLink from "../ui/SocialLink.astro";
       url="https://www.linkedin.com/in/antoine-fricker-2a566754/"
     />
   </div>
-</footer>
+</section>

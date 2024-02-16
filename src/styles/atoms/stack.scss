@@ -10,6 +10,10 @@
     flex: 1 1 100%;
   }
 
+  &.--fullwidth{
+    width: 100%;
+  }
+
   &.--debug > * {
     outline: 1px solid red;
   }

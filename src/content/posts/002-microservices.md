@@ -1,11 +1,11 @@
 ---
-title: "Sed vehicula iaculis"
-pubDate: 2024-02-05
-description: "This is the first post of my new Astro blog."
+title: "Réflexion sur les microservices"
+pubDate: 2024-02-06
+description: "An interesting feedback from Mathieu Cordin on microservices."
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
+  url: "astro.webp"
   alt: "The full Astro logo."
-tags: ["astro", "blogging", "learning in public"]
+tags: ["astro"]
 ---
 
 ## Maecenas in arcu laoreet laoreet justo sit amet

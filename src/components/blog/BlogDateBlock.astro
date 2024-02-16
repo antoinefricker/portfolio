@@ -1,0 +1,14 @@
+---
+import "./BlogDateBlock.scss";
+
+const { date } = Astro.props;
+
+const fillToTwoDigits = (number: number) => {
+  return number < 10 ? `0${number}` : number;
+};
+---
+
+<div class="blog-date-block">
+  <span>{fillToTwoDigits(date.getMonth() + 1)}</span>
+  <span>{date.getFullYear()}</span>
+</div>

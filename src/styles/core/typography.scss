@@ -27,14 +27,20 @@
 }
 
 // --- font sizes
-%text-xsm {
+%text-xs {
   font-size: 0.75em;
 }
 %text-sm {
   font-size: 0.85em;
 }
 %text-default {
-  font-size: 1rem;
+  font-size: 1em;
+}
+%text-lg {
+  font-size: 1.15em;
+}
+%text-xl {
+  font-size: 1.5em;
 }
 
 // --- headings
@@ -75,9 +81,40 @@
   padding: 0;
 }
 
+%h1,
+%h2,
+%h3,
+%h4,
+%h5,
+%h6,
+%p {
+  &.--text-xs {
+    @extend %text-xs;
+  }
+  &.--text-sm {
+    @extend %text-sm;
+  }
+  &.--text-lg {
+    @extend %text-lg;
+  }
+  &.--text-xl {
+    @extend %text-xl;
+  }
+}
+
+.--text-left{
+  text-align: left;
+}
+.--text-center{
+  text-align: center;
+}
+.--text-right{
+  text-align: right;
+}
+
 // blocks
 
-%paragraph {
+%p {
   @extend %text-body-standard;
   margin: 0;
   padding: 0;
@@ -140,9 +177,9 @@ a {
     }
     p {
       margin: 0 0 0.75em 0;
-    }
-    a {
-      @extend %text-link-styled;
+      a {
+        @extend %text-link-styled;
+      }
     }
   }
 }
@@ -193,7 +230,7 @@ a {
   }
   p {
     @extend %text-default;
-    @extend %paragraph;
+    @extend %p;
   }
 }
 

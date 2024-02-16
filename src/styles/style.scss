@@ -4,10 +4,10 @@
 @import "core/colorset.scss";
 @import "core/reset.scss";
 @import "core/spacing";
-
-@import "typography/typography";
+@import "core/typography";
 
 @import "atoms/stack";
 @import "atoms/tabler-icon";
+@import "atoms/buttons";
 
 @import "layouts/application.scss";

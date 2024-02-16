@@ -1,9 +1,45 @@
 ---
+import ImageFillerSection from "../components/ui/ImageFillerSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPostsList from "../components/blog/BlogPostsList.astro";
 
 const pageTitle = "antoine fricker - fullstack developer";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>Hello world!</p>
+  <section class="app-section --70vh">
+    <header>
+      <br />
+      <br />
+      <br />
+      <h1>Hi! I'm Antoine</h1>
+    </header>
+    <content>
+      <div class="grid">
+        <div class="cell-2"></div>
+        <div class="cell-9 flow-text">
+          <p class="--text-lg">
+            I am a fullstack developer from France, mainly within the Javascript/Typescript ecosystem. When not working,
+            you'll find me tinkering something stupid in my workshop, hopelessly trying to grow plants in a thankless
+            climate or cooking with love for a gourmet family.
+          </p>
+          <p class="--text-lg">
+            In this devlogs you may encounter notes on projects, technologies and readings, as well as (very few)
+            personal articles and rare extracurricular digression.
+          </p>
+        </div>
+        <div class="cell-1"></div>
+      </div>
+    </content>
+  </section>
+  <ImageFillerSection classModifier="--30vh" src="/images/cloud-separator2.webp" />
+  <section class="app-section">
+    <header>
+      <h3>Last logs</h3>
+    </header>
+    <content>
+      <BlogPostsList length={5} previewLength={2} showMoreLink={true} />
+    </content>
+  </section>
+  <ImageFillerSection classModifier="--30vh" src="/images/cloud-separator2.webp" />
 </BaseLayout>

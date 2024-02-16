@@ -1,0 +1,19 @@
+.navigation-button {
+  @extend .stack;
+  width: fit-content;
+
+  padding: 0.5 * $gutter 1.4 * $gutter 0.85 * $gutter 1 * $gutter;
+  & > .tabler-icon {
+    margin-right: 0.5 * $gutter;
+  }
+
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 0 10px 0 rgba(theme("colors.secondary"), 0.25);
+  &:hover {
+    box-shadow: 0 0 14px 0 rgba(theme("colors.secondary"), 0.75);
+  }
+  outline: 1px solid rgba(theme("colors.secondary"), 0.25);
+  border-radius: 24px;
+
+  cursor: pointer;
+}

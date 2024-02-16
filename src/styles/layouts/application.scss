@@ -1,6 +1,70 @@
+$app-header-height: 100px;
+
 .root-container {
-  width: 70vw;
-  min-width: 700px;
+  width: 100%;
+  min-width: 800px;
   max-width: 1300px;
-  margin: 0 auto 0 3rem;
+  margin-left: 3rem;
+}
+
+#app-container {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+#app-footer {
+  padding: 6 * $gutter 0 2 * $gutter 0;
+}
+#app-header {
+  position: fixed;
+  top: 0;
+  height: $app-header-height;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+
+  background-color: theme("colors.page");
+
+  & > nav{
+    margin-bottom: $gutter;
+    align-self: flex-end;
+    & > a{
+      padding: $gutter;
+      transition: color 0.3s ease-in-out;
+      &:hover{
+        color: theme("colors.primary");
+      }
+    }
+  }
+}
+section.app-section {
+  padding-top: $app-header-height;
+  scroll-snap-align: start;
+
+  & > header {
+    padding-bottom: 4 * $gutter;
+
+    h1,
+    h3 {
+      color: theme("colors.secondary");
+    }
+  }
+
+  &.--no-p {
+    padding-top: 0;
+    background-repeat: no-repeat;
+    object-fit: fill;
+    z-index: -1;
+  }
+
+  @for $i from 1 through 10 {
+    &.--#{$i  * 10}vh {
+      min-height: #{$i * 10}vh;
+    } 
+  }
 }
