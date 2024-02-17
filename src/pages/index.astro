@@ -14,32 +14,30 @@ const pageTitle = "antoine fricker - fullstack developer";
       <br />
       <h1>Hi! I'm Antoine</h1>
     </header>
-    <content>
-      <div class="grid">
-        <div class="cell-2"></div>
-        <div class="cell-9 flow-text">
-          <p class="--text-lg">
-            I am a fullstack developer from France, mainly within the Javascript/Typescript ecosystem. When not working,
-            you'll find me tinkering something stupid in my workshop, hopelessly trying to grow plants in a thankless
-            climate or cooking with love for a gourmet family.
-          </p>
-          <p class="--text-lg">
-            In this devlogs you may encounter notes on projects, technologies and readings, as well as (very few)
-            personal articles and rare extracurricular digression.
-          </p>
-        </div>
-        <div class="cell-1"></div>
-      </div>
+    <content class="flow-text">
+      <p class="--text-lg">
+        I am a fullstack developer from France, mainly within the Javascript/Typescript ecosystem. When not coding,
+        you'll find me tinkering something stupid in my workshop, hopelessly trying to grow plants under duress or
+        cooking with love and spices for a gourmet family.
+      </p>
+      <p class="--text-lg">
+        Here you may encounter notes on tech readings, feedback on my daily practice, <s>very few</s> personal articles and
+        rare extracurricular digressions nonetheless.
+      </p>
+      <p class="--text-lg"><em>So, hello world and be welcome!</em></p>
     </content>
   </section>
   <ImageFillerSection classModifier="--30vh" src="/images/cloud-separator2.webp" />
-  <section class="app-section">
+  <section class="app-section --60vh">
     <header>
-      <h3>Last logs</h3>
+      <br />
+      <br />
+      <br />
+      <h3>Last log entries</h3>
     </header>
     <content>
       <BlogPostsList length={5} previewLength={2} showMoreLink={true} />
     </content>
   </section>
-  <ImageFillerSection classModifier="--30vh" src="/images/cloud-separator2.webp" />
+  <ImageFillerSection classModifier="--40vh" src="/images/cloud-separator2.webp" />
 </BaseLayout>

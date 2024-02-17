@@ -1,5 +1,5 @@
 ---
-import "./BlogDateBlock.scss";
+import { format } from "date-fns";
 
 const { date } = Astro.props;
 
@@ -9,6 +9,7 @@ const fillToTwoDigits = (number: number) => {
 ---
 
 <div class="blog-date-block">
-  <span>{fillToTwoDigits(date.getMonth() + 1)}</span>
-  <span>{date.getFullYear()}</span>
+  <div>{fillToTwoDigits(date.getDate())}</div>
+  <div>{format(date, "MMM")}</div>
+  <div>{date.getFullYear()}</div>
 </div>

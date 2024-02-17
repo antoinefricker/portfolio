@@ -5,7 +5,7 @@ description: "An interesting feedback from Mathieu Cordin on microservices."
 image:
   url: "astro.webp"
   alt: "The full Astro logo."
-tags: ["astro"]
+tags: ["architectures","devops"]
 ---
 
 ## Maecenas in arcu laoreet laoreet justo sit amet

@@ -1,0 +1,11 @@
+.blog-tags-list{
+    & > *{
+        @extend %text-sm;
+        margin-bottom: theme('gutters.md');
+        display: float;
+        &:not(:last-child):after{
+            content: '|';
+            padding: 0 $gutter;
+        }
+    }
+}

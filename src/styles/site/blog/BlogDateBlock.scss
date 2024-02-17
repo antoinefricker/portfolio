@@ -1,0 +1,32 @@
+.blog-date-block {
+  display: block;
+  width: 90px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  & > div {
+    font-family: $font-family-title;
+    margin-top:-0.75rem;
+    margin-bottom: -0.25em;
+    text-align: center;
+    &:nth-child(1) {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-top:-1rem;
+      margin-bottom: -0.25em;
+    } 
+    &:nth-child(2) {
+      z-index: 0;
+      font-size: 1.6rem;
+      font-family: $font-family-body;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-bottom: -0.8rem;
+      color: rgba(theme("colors.primary"), .75); 
+    }
+    &:nth-child(3) {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: rgba(theme("colors.text"), .25);
+    }
+  }
+}

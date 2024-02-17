@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BlogDateBlock from "./BlogDateBlock.astro";
+import BlogTagsList from "./BlogTagsList.astro";
 import NavigationButton from "../ui/NavigationButton.astro";
 
 const { length = 5, previewLength = 1, showMoreLink = true } = Astro.props;
@@ -11,19 +12,20 @@ const posts = allPosts.slice(-length);
 
 <div>
   {
-    posts.map((post, index) => {
+    posts.map((post, postIndex) => {
       const pubDate = post.data.pubDate;
       return (
-        <div>
+        <div class="mb-lg">
           <div class="stack --row --gap-lg --align-items-start mb-md">
             <a href={`blog/${post.slug}`}>
               <BlogDateBlock date={pubDate} />
             </a>
             <div class="stack --column --align-items-start mb-md">
-              <a href={`blog/${post.slug}`}>
+              <a href={`blog/${post.slug}`} class="mb-md">
                 <h3>{post.data.title}</h3>
               </a>
-              {index < previewLength && <p>{post.data.description}</p>}
+              <BlogTagsList tags={post.data.tags} />
+              {postIndex < previewLength && <p>{post.data.description}</p>}
             </div>
           </div>
         </div>
