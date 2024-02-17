@@ -17,8 +17,12 @@ const html = await post.render();
 ---
 
 <BaseLayout pageTitle={post.data.title}>
-  <article class="flow-text">
-    <h1>{post.data?.title}</h1>
-    <html.Content />
-  </article>
+  <section class="app-section">
+    <header>
+      <h1>{post.data.title}</h1>
+    </header>
+    <div class="flow-text">
+      <html.Content />
+    </div>
+  </section>
 </BaseLayout>

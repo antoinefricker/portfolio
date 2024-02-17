@@ -3,7 +3,7 @@ $app-header-height: 100px;
 .root-container {
   width: 100%;
   min-width: 800px;
-  max-width: 1300px;
+  max-width: 1100px;
   margin-left: 3rem;
 }
 
@@ -11,9 +11,9 @@ $app-header-height: 100px;
   height: 100vh;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-gutter: stable;
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
+  // scrollbar-gutter: stable;
+  // scroll-snap-type: y mandatory;
+  // scroll-behavior: smooth;
 }
 
 #app-footer {
@@ -47,9 +47,8 @@ section.app-section {
   scroll-snap-align: start;
 
   & > header {
+    padding-top: 10 * $gutter;
     padding-bottom: 4 * $gutter;
-
-    h1,
     h3 {
       color: theme("colors.secondary");
     }

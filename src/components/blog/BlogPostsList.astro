@@ -7,7 +7,11 @@ import NavigationButton from "../ui/NavigationButton.astro";
 const { length = 5, previewLength = 1, showMoreLink = true } = Astro.props;
 
 const allPosts = await getCollection("posts");
-const posts = allPosts.slice(-length);
+const posts = allPosts.slice(-length).sort((a, b) => {
+  const dateA = new Date(a.data.pubDate);
+  const dateB = new Date(b.data.pubDate);
+  return dateB.valueOf() - dateA.valueOf();
+});
 ---
 
 <div>
